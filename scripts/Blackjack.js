@@ -147,6 +147,7 @@ class Blackjack {
         if(!this.inPlay || this.paused) return;
         this.player.addCard(this.deck.dealCard());
         if(this.player.getValue() > 21) {
+            this.dealer.draw();
             let that = this;
             setTimeout(() => {
                 that.inPlay = false;
@@ -184,19 +185,21 @@ class Blackjack {
         this.updateWallet();
     }
     updateWallet() {
-        document.getElementById('wallet').innerHTML = "Wallet: $" + this.wallet;
-        document.getElementById('bet').innerHTML = "Bet: $" + this.bet;
+        document.getElementById('wallet').innerHTML = "$" + this.wallet;
+        document.getElementById('bet').innerText = "$" + this.bet;
     }
     displayResult(outcome) {
         let that = this;
-        let overlay = document.getElementById("overlay");
-        overlay.innerHTML = outcome;
-        overlay.classList.toggle('overlay');
-        overlay.addEventListener('click', () => {
-            overlay.classList.toggle('overlay');
-            that.updatePanel();
-            that.checkDeck();
-        });
+        this.overlay = document.getElementById("overlay");
+        this.overlay.innerHTML = outcome;
+        this.overlay.classList.toggle('overlay');
+        this.overlay.classList.toggle('hidden');
+    }
+    reset() {
+        this.overlay.classList.toggle('overlay');
+        this.overlay.classList.toggle('hidden');
+        this.updatePanel();
+        this.checkDeck();
     }
     updatePanel() {
         let that = this;
