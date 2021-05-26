@@ -2,12 +2,31 @@
 <html>
     <head>
         <title>Blackjack</title>
-
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <input type="button" onclick="game.hit()" value="hit">
-        <input type="button" onclick="game.stand()" value="stand">
-        <input type="button" onclick="game.reset()" value="reset">
+        <div id="overlay"></div>
+        <h2 class="header">BLACKJACK</h2>
+        <canvas id="canvas" width=950vw height="600vh"></canvas>
+        <div id="display">
+            <div class="adjust"></div>
+            <div id="actions" class="buttons hidden">
+                <input type="button" class="action button" onclick="game.hit()" value="Hit">
+                <input type="button" class="action button" onclick="game.stand()" value="Stand">
+            </div>
+            <div id="betting" class="buttons">
+                <button class="bet button" onclick="game.betClick(this)" value="10">$10</button>
+                <button class="bet button" onclick="game.betClick(this)" value="50">$50</button>
+                <button class="bet button" onclick="game.betClick(this)" value="100">$100</button>
+                <input type="button" class="deal button" onclick="game.deal(this)" value="Deal">
+            </div>
+            <div class="panel">
+                <p id="shuffle"></p>
+                <p id="bet">Bet: $0</p>
+                <p id="wallet"></p>
+            </div>
+        </div>
+        
 
 
 

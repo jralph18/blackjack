@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-family: Verdana;
+    background: linear-gradient(90deg, rgb(3, 3, 43) 0%, rgb(11, 11, 151) 35%, rgb(85, 134, 240) 100%);
+}
+
+p{
+    margin: 0;
+}
+
+#overlay {
+    position: static;
+    margin: auto;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.header {
+    color: white;
+    position: absolute;
+    top: 10px;
+}
+
+#canvas {
+    top: 10%;
+    position: fixed;
+    background-color: #226411;
+    border: 5px solid rgba(27, 27, 27, 0.75);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+#display {
+    display: flex;
+    position: fixed;
+    top: 10%;
+    width: 950px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.button {
+    /* position: relative; */
+    width: 65px;
+    height: 65px;
+    margin: 5px 20px;
+    background-color: rgb(37, 37, 37);
+    border-radius: 50px;
+    color: white;
+    z-index: 10;
+}
+
+/* .adjust {
+    width: 50%;
+    /* height: 650px; */
+/* } */
+
+.buttons {
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+/* .break {
+    flex-basis: 100%;
+} */
+
+#result {
+    position: fixed;
+    font-size: 32pt;
+    top: 450px;
+    left: 800px;
+    color: white;
+    z-index: 10;
+}
+
+#shuffle {
+    justify-self: center;
+    align-self: center;
+}
+
+.panel {
+    /* height:  */
+    /* flex-direction: column;
+    flex-wrap: wrap;
+    display: flex; */
+    font-size: 35px;
+    color: white;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    display: flex;
+    background-color: rgb(10, 10, 10);
+    opacity: 0.75;
+    color: white;
+    font-size: 70px;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
